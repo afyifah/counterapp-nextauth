@@ -26,9 +26,9 @@ export const Login = () => {
   };
 
   return (
-    <main className="h-screen w-full bg-primary-100 flex items-center justify-center">
+    <main className="h-screen w-full bg-primary-500 flex items-center justify-center">
       <div>
-        <div className="w-96 p-6 shadow-lg bg-primary-white rounded-md">
+        <div className="w-96 p-6 shadow-lg bg-primary-100 rounded-md">
           <h3 className=" flex items-center justify-center text-secondary-950 p-4 text-4xl">Login</h3>
           <div className="  flex flex-col gap-3 bg-primary-200 p-10 border-2 border-primary-500 rounded-lg">
             <Input type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} className="p-2 border border-secondary-700" />
