@@ -3,6 +3,7 @@
 import { signOut, useSession } from 'next-auth/react';
 
 import { Login } from '@/components/Auth/Login';
+import { Counter } from '@/components/counter';
 import { Button } from '@/components/ui/button';
 
 export default function Page() {
@@ -20,6 +21,7 @@ export default function Page() {
               <Button onClick={() => signOut()}>Logout</Button>
             </div>
           </div>
+          <Counter />
         </main>
       ) : (
         <div className="flex justify-center">
