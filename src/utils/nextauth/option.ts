@@ -59,6 +59,22 @@ export const options: AuthOptions = {
       }
       return true;
     },
+    session: async ({ session }) => {
+      if (session.user) {
+        const findUser = await prisma.user.findUnique({
+          where: {
+            email: session.user.email as string,
+          },
+        });
+        /* eslint-disable no-param-reassign */
+        if (findUser) {
+          session.user.id = findUser.id;
+          session.user.role = 'USER';
+        }
+      }
+
+      return session;
+    },
   },
   pages: {
     signIn: '/dashboard',
